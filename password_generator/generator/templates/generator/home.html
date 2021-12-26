@@ -1,0 +1,11 @@
+<h1>Password Generator</h1>
+
+
+<form action="{% url 'password' %}">
+    <select name="length">
+        <option value="6">6 char long</option>
+        <option value="7">7 char long</option>
+        <option value="8">8 char long</option>
+    </select>
+    <input type="submit" value="Generate Password">
+</form>
