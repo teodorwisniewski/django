@@ -2,3 +2,4 @@
 *.zip
 /.idea/
 /venv/
+settings.py
