@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import string
+import random
 
 
 def home(request):
-    return render(request, 'generator/home.html', {'password': 'secretpass'})
+    return render(request, 'generator/home.html')
 
 
 def eggs(request):
@@ -11,4 +13,9 @@ def eggs(request):
 
 
 def password(request):
-    return render(request, 'generator/password.html', {'password': 'secretpass'})
+    generated_password = ''
+    characters = list(string.ascii_lowercase)
+    length = 10
+    for x in range(length):
+        generated_password += random.choice(characters)
+    return render(request, 'generator/password.html', {'password': generated_password})
